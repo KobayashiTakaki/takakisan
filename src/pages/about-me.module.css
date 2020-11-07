@@ -1,0 +1,15 @@
+.policy h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.policy p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.policy a {
+  color: var(--color-link);
+  text-decoration: underline;
+}

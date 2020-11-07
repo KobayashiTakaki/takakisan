@@ -1,0 +1,27 @@
+.paginator {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.paginator__links a {
+  color: var(--color-text);
+}
+
+.paginator__links {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.counter {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.counter__num {
+  padding-left: 4px;
+  padding-right: 4px;
+}

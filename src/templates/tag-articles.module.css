@@ -1,0 +1,23 @@
+
+.tagsLink a {
+  color: var(--color-text);
+}
+
+.tagsLink {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.tagName {
+  background-color: var(--color-highlight);
+  color: var(--color-link);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.tagName::before {
+  content: '#';
+  color: var(--color-link);
+}

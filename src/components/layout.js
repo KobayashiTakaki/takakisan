@@ -7,10 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import 'destyle.css'
+import styles from './layout.module.css'
+import LogoImage from '../images/logo.png'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,28 +27,70 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className={styles.container}>
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <BottomMenu />
+      <Footer />
     </>
   )
 }
 
+const Header = ({ siteTitle }) => (
+  <header className={styles.siteHeader}>
+    <Link to="/">
+      <img src={ LogoImage } alt="takakisan" className={styles.siteHeader__logo} />
+    </Link>
+  </header>
+)
+
+const BottomMenu = () => {
+  return (
+    <div className={styles.bottomMenu}>
+      <ul>
+        <li>
+          <Link to='/'>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to='/about-me'>
+            About Me
+          </Link>
+        </li>
+        <li>
+          <Link to='/policy'>
+            プライバシーポリシー
+          </Link>
+        </li>
+        <li>
+          <Link to='/contact'>
+            お問い合わせ
+          </Link>
+        </li>
+      </ul>
+    </div>
+  )
+}
+
+const Footer = () => (
+  <footer className={styles.footer}>
+    <p className={styles.footer__text}>
+      © {new Date().getFullYear()} Takaki Kobayashi
+    </p>
+  </footer>
+)
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+}
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
 }
 
 export default Layout

@@ -1,0 +1,37 @@
+.asideTags {
+  margin-top: 40px;
+}
+
+.asideTags ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.asideTags li {
+  background-color: var(--color-highlight);
+  color: var(--color-link);
+  font-size: 0.8em;
+  padding: 4px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.asideTags li::before {
+  content: '#';
+  color: var(--color-link);
+}
+
+.asideTags li:not(:last-child) {
+  margin-right: 8px;
+}
+
+.tagsLink a {
+  color: var(--color-text);
+}
+
+.tagsLink {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}

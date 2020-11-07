@@ -1,0 +1,25 @@
+.tagList a {
+  text-decoration: none;
+}
+
+.tagList ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagList li {
+  background-color: var(--color-highlight);
+  font-size: 0.8em;
+  padding: 4px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.tagList li::before {
+  content: '#';
+  color: var(--color-link);
+}
+
+.tagList li:not(:last-child) {
+  margin-right: 8px;
+}

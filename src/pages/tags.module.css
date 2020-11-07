@@ -1,0 +1,16 @@
+.tagList li {
+  margin-bottom: 20px;
+}
+
+.tagName::before {
+  content: '#';
+  color: var(--color-link);
+}
+
+.tagName {
+  margin-right: 4px;
+  padding: 4px;
+  color: var(--color-link);
+  background-color: var(--color-highlight);
+  border-radius: 4px;
+}

@@ -1,0 +1,28 @@
+/* cancel global css */
+
+.articleTags a {
+  text-decoration: none;
+}
+
+/* /cancel global css */
+
+.articleTags ul {
+  display: flex;
+}
+
+.articleTags li {
+  background-color: var(--color-highlight);
+  color: var(--color-link);
+  font-size: 0.8em;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.articleTags li::before {
+  content: '#';
+  color: var(--color-link);
+}
+
+.articleTags li:not(:last-child) {
+  margin-right: 8px;
+}
