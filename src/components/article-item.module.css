@@ -81,7 +81,7 @@ h3.articleItem__title {
   }
   .articleItem__image {
     width: 120px;
-    height: 120px;
+    height: 100%;
   }
 
   .articleItem__main {
