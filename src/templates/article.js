@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 import TagList from '../components/tag-list'
+import InArticleAd from '../components/in-article-ad'
 import RelatedArticles from '../components/related-articles'
 import AsideTags from '../components/aside-tags'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
@@ -30,7 +31,10 @@ export default function Article({ data }) {
             imgStyle={{ objectFit: 'cover'}}
             alt={articleTitle} />
         </div>
-        <TagList tags={article.frontmatter.tags} />
+        <div className={styles.tagList}>
+          <TagList tags={article.frontmatter.tags} />
+        </div>
+        <InArticleAd adSlot={4202835281} />
         <section dangerouslySetInnerHTML={{ __html: article.html }} />
         <div className={styles.snsButtons}>
           <TwitterShareButton
@@ -40,6 +44,8 @@ export default function Article({ data }) {
           </TwitterShareButton>
         </div>
       </div>
+      <h4>スポンサーリンク</h4>
+      <InArticleAd adSlot={3831300191} />
       <RelatedArticles articles={data.relatedArticles}/>
       <AsideTags />
     </Layout>

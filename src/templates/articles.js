@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import ArticleItem from '../components/article-item'
 import Paginator from '../components/paginator'
 import AsideTags from '../components/aside-tags'
+import ArticleListAd from '../components/article-list-ad'
 
 const Articles = ({ pageContext, data }) => {
   let title
@@ -15,14 +16,14 @@ const Articles = ({ pageContext, data }) => {
   } else {
     title = `記事 (${pageContext.currentPage} of ${pageContext.numPages})`
   }
+  const elems = data.allMarkdownRemark.edges.map(({ node }) => (
+    <ArticleItem article={node} key={node.fields.slug} />
+  ))
+
   return (
     <Layout>
       <SEO title={title} />
-      {
-        data.allMarkdownRemark.edges.map(({ node }) => (
-          <ArticleItem article={node} key={node.fields.slug} />
-        ))
-      }
+      { insertAds(elems) }
       <Paginator
         basePath={pageContext.basePath}
         currentPage={pageContext.currentPage}
@@ -30,6 +31,18 @@ const Articles = ({ pageContext, data }) => {
       <AsideTags />
     </Layout>
   )
+}
+
+const insertAds = (elems) => {
+  let ret = elems;
+  // TODO: てきとう
+  if(elems.length > 4) {
+    ret.splice(2, 0, <ArticleListAd adSlot={8403941341} key={'ad1'}/>);
+  }
+  if (elems.length > 10) {
+    ret.splice(9, 0, <ArticleListAd adSlot={8403941341} key={'ad2'}/>);
+  }
+  return ret
 }
 
 Articles.propTypes = {
