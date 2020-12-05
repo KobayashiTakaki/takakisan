@@ -10,6 +10,7 @@ module.exports = {
     settings: {
       articlesPerPage: 10,
     },
+    siteUrl: `https://takakisan.com/`
   },
   plugins: [
     {
@@ -17,6 +18,12 @@ module.exports = {
       options: {
         trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
         head: true,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/articles/*`]
       }
     },
     `gatsby-plugin-react-helmet`,
