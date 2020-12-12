@@ -12,13 +12,16 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Create .env file
+      run: |
+        echo "GATSBY_ROOT_URL=${{ secrets.DEV_GATSBY_ROOT_URL }}" >> .env
+        echo "GATSBY_GOOGLE_ANALYTICS_TRACKING_ID=${{ secrets.DEV_GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}" >> .env
+
     - name: Build Gatsby site
       uses: actions/setup-node@v1
-    - run: |
-      echo "GATSBY_ROOT_URL=${{ secrets.DEV_GATSBY_ROOT_URL }}" >> .env
-      echo "GATSBY_GOOGLE_ANALYTICS_TRACKING_ID=${{ secrets.DEV_GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}" >> .env
-    - run: yarn install
-    - run: yarn gatsby build
+      run: |
+        yarn install
+        yarn gatsby build
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
