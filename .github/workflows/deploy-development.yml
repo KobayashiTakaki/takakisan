@@ -17,8 +17,8 @@ jobs:
 
     - name: Create .env file
       run: |
-        echo "GATSBY_ROOT_URL=${{ secrets.DEV_GATSBY_ROOT_URL }}" >> .env
-        echo "GATSBY_GOOGLE_ANALYTICS_TRACKING_ID=${{ secrets.DEV_GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}" >> .env
+        echo "GATSBY_ROOT_URL=${{ secrets.DEV_GATSBY_ROOT_URL }}" >> .env.production
+        echo "GATSBY_GOOGLE_ANALYTICS_TRACKING_ID=${{ secrets.DEV_GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}" >> .env.production
 
     - name: Build Gatsby site
       run: |
