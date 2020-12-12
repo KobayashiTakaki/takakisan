@@ -19,9 +19,8 @@ jobs:
 
     - name: Build Gatsby site
       uses: actions/setup-node@v1
-      run: |
-        yarn install
-        yarn gatsby build
+    - run: yarn install
+    - run: yarn gatsby build
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
