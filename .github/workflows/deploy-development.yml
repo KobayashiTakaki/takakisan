@@ -2,7 +2,7 @@ name: deploy-development
 on:
   push:
     branches:
-      - develop-workflow
+      - develop
 jobs:
   deploy:
     name: Build and Upload to Amazon S3
