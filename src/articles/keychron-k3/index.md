@@ -4,7 +4,9 @@ date: "2021-01-21"
 tags: ["ガジェット"]
 ---
 
-おしゃれデザインでお手頃価格のメカニカルキーボードを作っているKeychronというメーカーが結構好きで、
+おしゃれデザインでお手頃価格のメカニカルキーボードを作っている
+<a href="https://www.keychron.com/" target="_blank" rel="noopener noreferrer">Keychron</a>
+というメーカーが結構好きで、
 <br/>
 仕事用にKeychron K2, 自宅用にKeychron K1を持っているのですが、
 <br/>
