@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ArticleItem from '../components/article-item'
-import Paginator from '../components/paginator'
-import AsideTags from '../components/aside-tags'
-import styles from './tag-articles.module.css'
+import ArticleItem from "../components/article-item"
+import Paginator from "../components/paginator"
+import AsideTags from "../components/aside-tags"
+import styles from "./tag-articles.module.css"
 
 const TagArticles = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -22,15 +22,14 @@ const TagArticles = ({ pageContext, data }) => {
       <div className={styles.tagsLink}>
         <Link to="/tags">タグ一覧</Link>
       </div>
-      {
-        data.allMarkdownRemark.edges.map(({ node }) => (
-          <ArticleItem article={node} key={node.fields.slug} />
-        ))
-      }
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <ArticleItem article={node} key={node.fields.slug} />
+      ))}
       <Paginator
         basePath={pageContext.basePath}
         currentPage={pageContext.currentPage}
-        numPages={pageContext.numPages}/>
+        numPages={pageContext.numPages}
+      />
       <AsideTags />
     </Layout>
   )
