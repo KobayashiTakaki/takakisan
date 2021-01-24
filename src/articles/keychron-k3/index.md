@@ -54,10 +54,10 @@ K3は上側だけがアルミで、裏はプラスチックになっているの
 K1(赤軸)とK3(白軸)でそれぞれ動画を撮ってみたのでどうぞ。
 
 ### K1(赤軸)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9m_8VapfJEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/9m_8VapfJEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### K3(白軸)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dw1s22Mii7M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dw1s22Mii7M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 総じて
 いい感じなので引き続き使っていきたいと思います。
