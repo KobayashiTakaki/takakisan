@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "takakisan",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My site made with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.19",
@@ -44,16 +43,15 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/KobayashiTakaki/takakisan"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/KobayashiTakaki/takakisan/issues"
   }
 }
