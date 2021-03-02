@@ -1,0 +1,42 @@
+name: deploy-production
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    name: Build and Upload to Amazon S3
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+
+    - name: Create .env file
+      run: |
+        echo "GATSBY_ROOT_URL=${{ secrets.PROD_GATSBY_ROOT_URL }}" >> .env.production
+        echo "GATSBY_GOOGLE_ANALYTICS_TRACKING_ID=${{ secrets.PROD_GATSBY_GOOGLE_ANALYTICS_TRACKING_ID }}" >> .env.production
+
+    - name: Build Gatsby site
+      run: |
+        yarn install
+        yarn gatsby build
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-1
+
+    - name: Copy files to the production S3 bucket
+      run: |
+        aws s3 sync ./public s3://${{ secrets.PROD_AWS_S3_BUCKET }} --delete
+
+    - name: Create a new invalidation
+      run: |
+        aws cloudfront create-invalidation \
+        --distribution-id ${{ secrets.PROD_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
