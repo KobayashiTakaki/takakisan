@@ -13,7 +13,7 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <SEO title="タグ一覧" />
+    <SEO title="タグ一覧" path="/tags"/>
     <h1>タグ一覧</h1>
     <ul className={styles.tagList}>
       {group.map(tag => (
