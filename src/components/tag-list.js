@@ -3,18 +3,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import kebabCase from "lodash/kebabCase"
 
-import styles from './tag-list.module.css'
+import styles from "./tag-list.module.css"
 
 const TagList = ({ tags }) => (
   <div className={styles.tagList}>
     <ul>
-      {
-        tags.map((tag) => (
-          <li key={tag}>
-            <Link to={`/tags/${kebabCase(tag)}/1`}>{tag}</Link>
-          </li>
-        ))
-      }
+      {tags.map(tag => (
+        <li key={tag}>
+          <Link to={`/tags/${kebabCase(tag)}/1`}>{tag}</Link>
+        </li>
+      ))}
     </ul>
   </div>
 )

@@ -3,18 +3,16 @@ import PropTypes from "prop-types"
 import React from "react"
 import kebabCase from "lodash/kebabCase"
 
-import styles from './article-tags.module.css'
+import styles from "./article-tags.module.css"
 
 const ArticleTags = ({ tags }) => (
   <div className={styles.articleTags}>
     <ul>
-      {
-        tags.map((tag) => (
-          <li key={tag}>
-            <Link to={`/tags/${kebabCase(tag)}/1`}>{tag}</Link>
-          </li>
-        ))
-      }
+      {tags.map(tag => (
+        <li key={tag}>
+          <Link to={`/tags/${kebabCase(tag)}/1`}>{tag}</Link>
+        </li>
+      ))}
     </ul>
   </div>
 )

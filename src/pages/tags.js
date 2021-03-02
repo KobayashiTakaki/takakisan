@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 
-import styles from './tags.module.css'
+import styles from "./tags.module.css"
 
 const TagsPage = ({
   data: {
@@ -13,12 +13,15 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <SEO title='タグ一覧' />
+    <SEO title="タグ一覧" />
     <h1>タグ一覧</h1>
     <ul className={styles.tagList}>
       {group.map(tag => (
         <li key={tag.fieldValue}>
-          <Link className={styles.tagName} to={`/tags/${kebabCase(tag.fieldValue)}/1`}>
+          <Link
+            className={styles.tagName}
+            to={`/tags/${kebabCase(tag.fieldValue)}/1`}
+          >
             {tag.fieldValue}
           </Link>
           ({tag.totalCount})

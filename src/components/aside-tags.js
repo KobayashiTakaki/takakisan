@@ -1,8 +1,8 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
-import TagList from './tag-list'
+import TagList from "./tag-list"
 
-import styles from './aside-tags.module.css'
+import styles from "./aside-tags.module.css"
 
 const AsideTags = () => {
   const result = useStaticQuery(graphql`
@@ -15,12 +15,13 @@ const AsideTags = () => {
       }
     }
   `)
-  const tags =
-    result.tagsGroup.group.sort((a, b) => b.totalCount - a.totalCount).slice(0, 20)
+  const tags = result.tagsGroup.group
+    .sort((a, b) => b.totalCount - a.totalCount)
+    .slice(0, 20)
   return (
     <div className={styles.asideTags}>
       <h4>タグから記事をさがす</h4>
-      <TagList tags={tags.map((e) => e.fieldValue)}/>
+      <TagList tags={tags.map(e => e.fieldValue)} />
       <div className={styles.tagsLink}>
         <Link to="/tags">タグ一覧</Link>
       </div>

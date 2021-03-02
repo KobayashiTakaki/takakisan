@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, Link, graphql } from "gatsby"
 
-import 'destyle.css'
-import styles from './layout.module.css'
-import LogoImage from '../images/logo.png'
+import "destyle.css"
+import styles from "./layout.module.css"
+import LogoImage from "../images/logo.png"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,7 +39,11 @@ const Layout = ({ children }) => {
 const Header = ({ siteTitle }) => (
   <header className={styles.siteHeader}>
     <Link to="/">
-      <img src={ LogoImage } alt="takakisan" className={styles.siteHeader__logo} />
+      <img
+        src={LogoImage}
+        alt="takakisan"
+        className={styles.siteHeader__logo}
+      />
     </Link>
   </header>
 )
@@ -49,24 +53,16 @@ const BottomMenu = () => {
     <div className={styles.bottomMenu}>
       <ul>
         <li>
-          <Link to='/'>
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to='/about-me'>
-            About Me
-          </Link>
+          <Link to="/about-me">About Me</Link>
         </li>
         <li>
-          <Link to='/policy'>
-            プライバシーポリシー
-          </Link>
+          <Link to="/policy">プライバシーポリシー</Link>
         </li>
         <li>
-          <Link to='/contact'>
-            お問い合わせ
-          </Link>
+          <Link to="/contact">お問い合わせ</Link>
         </li>
       </ul>
     </div>

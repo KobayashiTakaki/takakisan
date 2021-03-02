@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ArticleItem from '../components/article-item'
-import Paginator from '../components/paginator'
-import AsideTags from '../components/aside-tags'
-import ArticleListAd from '../components/article-list-ad'
+import ArticleItem from "../components/article-item"
+import Paginator from "../components/paginator"
+import AsideTags from "../components/aside-tags"
+import ArticleListAd from "../components/article-list-ad"
 
 const Articles = ({ pageContext, data }) => {
   let title
-  if(pageContext.basePath === `/articles/` && pageContext.currentPage === 1){
+  if (pageContext.basePath === `/articles/` && pageContext.currentPage === 1) {
     title = `Home`
   } else {
     title = `記事 (${pageContext.currentPage} of ${pageContext.numPages})`
@@ -23,24 +23,25 @@ const Articles = ({ pageContext, data }) => {
   return (
     <Layout>
       <SEO title={title} />
-      { insertAds(elems) }
+      {insertAds(elems)}
       <Paginator
         basePath={pageContext.basePath}
         currentPage={pageContext.currentPage}
-        numPages={pageContext.numPages}/>
+        numPages={pageContext.numPages}
+      />
       <AsideTags />
     </Layout>
   )
 }
 
-const insertAds = (elems) => {
-  let ret = elems;
+const insertAds = elems => {
+  let ret = elems
   // TODO: てきとう
-  if(elems.length > 4) {
-    ret.splice(2, 0, <ArticleListAd adSlot={8403941341} key={'ad1'}/>);
+  if (elems.length > 4) {
+    ret.splice(2, 0, <ArticleListAd adSlot={8403941341} key={"ad1"} />)
   }
   if (elems.length > 10) {
-    ret.splice(9, 0, <ArticleListAd adSlot={8403941341} key={'ad2'}/>);
+    ret.splice(9, 0, <ArticleListAd adSlot={8403941341} key={"ad2"} />)
   }
   return ret
 }
