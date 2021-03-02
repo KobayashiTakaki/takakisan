@@ -3,7 +3,7 @@
   --color-text: #56666b;
   --color-weak: #9bacb1;
   --color-link: #dd5c6d;
-  --color-highlight: #ffe4ea;
+  --color-highlight: #ffdbd9;
   --color-decorate: #ca8998;
 }
 
@@ -102,16 +102,6 @@ blockquote {
   font-style: italic;
 }
 
-blockquote::before {
-  content: "“";
-  position: relative;
-  top: 1rem;
-  line-height: 0.5rem;
-  vertical-align: bottom;
-  font-size: 66px;
-  color: var(--color-weak);
-}
-
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -166,7 +156,6 @@ blockquote::before {
 }
 
 .footer {
-  margin-top: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -186,5 +175,11 @@ blockquote::before {
   .bottomMenu ul {
     padding-right: 0;
     padding-left: 0;
+    display: flex;
+  }
+
+  .bottomMenu ul li {
+    margin: 0;
+    padding: 8px;
   }
 }
