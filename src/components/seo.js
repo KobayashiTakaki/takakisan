@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, titleImage }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -25,8 +25,10 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
+  const urljoin = require("url-join")
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const metaImage = titleImage || "favicon.png"
 
   return (
     <Helmet
@@ -51,6 +53,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: urljoin(process.env.GATSBY_ROOT_URL, metaImage),
         },
         {
           name: `twitter:card`,

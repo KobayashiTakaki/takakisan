@@ -73,7 +73,7 @@ module.exports = {
         name: `takakisan`,
         short_name: `takakisan`,
         start_url: `/`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `static/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
