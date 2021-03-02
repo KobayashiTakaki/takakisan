@@ -17,7 +17,7 @@ export default function Article({ data }) {
   const urljoin = require(`url-join`)
   return (
     <Layout>
-      <SEO title={articleTitle} />
+      <SEO title={articleTitle} titleImage={article.titleImage.publicURL} path={article.fields.slug}/>
       <div className={styles.article}>
         <h1>{article.frontmatter.title}</h1>
         <div className={styles.date}>
@@ -71,6 +71,7 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+        publicURL
       }
     }
     relatedArticles: allMarkdownRemark(

@@ -14,7 +14,7 @@ const TagArticles = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title={`${tag} の記事`} />
+      <SEO title={`${tag} の記事`} path={`/tags/${tag}/1`} />
       <h1>
         <span className={styles.tagName}>{tag}</span>
         の記事

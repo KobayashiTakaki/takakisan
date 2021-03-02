@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="お問い合わせ" />
+    <SEO title="お問い合わせ" path="/contact" />
     <GoogleForm />
   </Layout>
 )

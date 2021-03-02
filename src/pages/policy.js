@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 const PolicyPage = () => (
   <Layout>
-    <SEO title="プライバシーポリシー" />
+    <SEO title="プライバシーポリシー" path="/policy"/>
     <h1>プライバシーポリシー</h1>
     <h2>当サイトが使用しているアクセス解析ツールについて</h2>
     <p>

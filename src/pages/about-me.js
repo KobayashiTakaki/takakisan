@@ -6,7 +6,7 @@ import styles from "./about-me.module.css"
 
 const AboutMePage = () => (
   <Layout>
-    <SEO title="About Me" />
+    <SEO title="About Me" path="/about-me"/>
     <div className={styles.policy}>
       <h1>About Me</h1>
       <p>

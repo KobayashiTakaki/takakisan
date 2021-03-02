@@ -10,11 +10,13 @@ import AsideTags from "../components/aside-tags"
 import ArticleListAd from "../components/article-list-ad"
 
 const Articles = ({ pageContext, data }) => {
-  let title
+  let title, path
   if (pageContext.basePath === `/articles/` && pageContext.currentPage === 1) {
     title = `Home`
+    path = `/`
   } else {
     title = `記事 (${pageContext.currentPage} of ${pageContext.numPages})`
+    path = `${pageContext.basePath}pageContext.currentPage`
   }
   const elems = data.allMarkdownRemark.edges.map(({ node }) => (
     <ArticleItem article={node} key={node.fields.slug} />
@@ -22,7 +24,7 @@ const Articles = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} path={path}/>
       {insertAds(elems)}
       <Paginator
         basePath={pageContext.basePath}
