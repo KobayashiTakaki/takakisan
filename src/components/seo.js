@@ -60,7 +60,7 @@ function SEO({ description, lang, meta, title, titleImage, path }) {
         },
         {
           property: `og:url`,
-          content: urljoin(process.env.GATSBY_ROOT_URL, path),
+          content: urljoin(process.env.GATSBY_ROOT_URL, path || ``),
         },
         {
           name: `twitter:card`,
