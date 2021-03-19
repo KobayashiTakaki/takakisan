@@ -133,9 +133,11 @@ Fargateを選びます。
 
 「コンテナを追加」ボタンをクリックすると、コンテナの設定画面が出てきます。
 <br/>
-コンテナ名を好きに付けて、イメージにはmetabaseのイメージ名を入れます。
+コンテナ名を好きに付けます。「metabase」としておきます。
 <br/>
-バージョンはlatestとしておきます。
+イメージにはmetabaseのイメージ名を入れます。
+<br/>
+バージョンは指定してもいいですが、ここではlatestとしておきます。`metabase/metabase:latest`となります。
 
 ポートマッピングで、TCP 3000 を設定しておきます。metabaseのイメージが3000番でリッスンするようになっているためです。
 
@@ -162,10 +164,11 @@ Fargateを選びます。
 
 ---
 
-ストレージとログ のところは、「ログ設定」「Auto-configure CloudWatch Logs」にチェックしておくと、CloudWatch Logsの設定をやってくれるので便利です。
+ストレージとログ のところは、「ログ設定」「Auto-configure CloudWatch Logs」にチェックしておくと、CloudWatch Logsの設定をやってくれます。
+
+コンテナ内のログはCloudWatch Logsに書き出すなどしないと見れないので、やっておきましょう。
 
 ![ログ設定](ecs-8.png)
-
 
 リソースの制限、DOCKER ラベル は入れなくて良いです。
 
