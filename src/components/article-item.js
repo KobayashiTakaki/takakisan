@@ -10,12 +10,7 @@ const ArticleItem = ({ article }) => {
     <div className={styles.articleItem}>
       <Link to={article.fields.slug}>
         <div className={styles.articleItem__image}>
-          <Img
-            fixed={article.titleImage.childImageSharp.fixed}
-            style={{ height: "100%", borderRadius: "3px" }}
-            imgStyle={{ objectFit: "cover" }}
-            alt={article.frontmatter.title}
-          />
+          <ArticleImage article={article} />
         </div>
       </Link>
       <div className={styles.articleItem__main}>
@@ -33,6 +28,17 @@ const ArticleItem = ({ article }) => {
         </div>
       </div>
     </div>
+  )
+}
+
+const ArticleImage = ({ article }) => {
+  return (
+    <Img
+      fixed={article.titleImage.childImageSharp.fixed}
+      style={{ height: "100%", borderRadius: "3px" }}
+      imgStyle={{ objectFit: "cover" }}
+      alt={article.frontmatter.title}
+    />
   )
 }
 

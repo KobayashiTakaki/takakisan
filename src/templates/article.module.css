@@ -81,8 +81,37 @@
   text-decoration: underline;
 }
 
+.article section {
+  overflow-x: auto;
+}
+
+.article section table {
+  font-family: "Roboto Mono", "Courier New", Consolas, monospace;
+  background-color: rgb(251, 255, 255);
+}
+
+.article section table tr {
+  line-height: 1.7rem;
+}
+
+.article section table tr:not(:last-child) {
+  border-bottom: 1px solid rgb(213, 222, 224);
+}
+
+.article section table th {
+  padding: 4px;
+  background-color: var(--color-highlight);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.article section table td {
+  padding: 4px;
+  text-align: center;
+}
+
 .article section code {
-  font-family: 'Roboto Mono', 'Courier New', Consolas, monospace;
+  font-family: "Roboto Mono", "Courier New", Consolas, monospace;
   font-weight: 800;
   letter-spacing: 0.3pt;
   line-height: 1.2rem;
