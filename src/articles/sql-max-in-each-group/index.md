@@ -12,7 +12,7 @@ SQLでデータ取得するときに「条件ごとにグループ分けして�
 
 ## まとめ
 
-`exists`を使うのが最速。`row_number()`で順番つけるのが意図がわかりやすい。
+`not exists`を使うのが最速。`row_number()`で順番つけるのが意図がわかりやすい。
 <br/>
 `group by`使うのはいまいち。
 
@@ -297,9 +297,9 @@ where
 
 という訳で、使ってみても良いんじゃないでしょうか。
 
-## 方法3: existsで同じテーブルを比較して絞る
+## 方法3: not existsで同じテーブルを比較して絞る
 
-最後に`exists`を使った方法です。これが一番おすすめです。
+最後に`not exists`を使った方法です。これが一番おすすめです。
 
 
 先程と同じ`user_scores`テーブルがあるとします。
@@ -479,7 +479,7 @@ from
 ;
 ```
 
-### 方法3: existsで同じテーブルを比較して絞る
+### 方法3: not existsで同じテーブルを比較して絞る
 
 ```sql
 select
@@ -511,11 +511,11 @@ from
 
 ### わかりやすさ
 
-`row_number()`使う > `exists`使う > `group by`使う
+`row_number()`使う > `not exists`使う > `group by`使う
 
 ### 速さ
 
-`exists`使う >>> `row_number()`使う > `group by`使う
+`not exists`使う >>> `row_number()`使う > `group by`使う
 
 ---
 
